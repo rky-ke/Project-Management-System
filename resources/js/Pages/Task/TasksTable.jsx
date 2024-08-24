@@ -11,7 +11,6 @@ import {
 
 
 export default function TasksTable({ tasks, queryParams = null }) {
-    queryParams = queryParams || {};
 
     const searchFieldChanged = (name, value) => {
         if (value) {
