@@ -1,14 +1,15 @@
 import Pagination from '@/Components/Pagination';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/16/solid';
 import TextInput from '@/Components/TextInput';
 import SelectInput from '@/Components/SelectInput';
-import { PROJECT_STATUS_CLASS_MAP } from '@/constants';
-import { PROJECT_STATUS_TEXT_MAP } from '@/constants';
+import { 
+    PROJECT_STATUS_CLASS_MAP,
+    PROJECT_STATUS_TEXT_MAP,
+ } from '@/constants';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import TableHeading from '@/Components/TableHeading';
 
-export default function Index({ auth, projects, tasks, queryParams = null }) {
+export default function Index({ auth, projects, queryParams = null }) {
 
     queryParams = queryParams || {};
 
@@ -153,7 +154,12 @@ export default function Index({ auth, projects, tasks, queryParams = null }) {
                                                     className="w-10 h-10 rounded-full" 
                                                     />
                                                 </td>
-                                                <td className="px-3 py-2">{project.name}</td>
+                                                <th className="px-3 py-2 text-grey-100 hover:text-red-400">
+                                                    <Link href={route("project.show", project.id)}
+                                                    >
+                                                        {project.name}
+                                                    </Link>
+                                                </th>
                                                 <td className="px-3 py-2">
                                                     <span 
                                                     className={

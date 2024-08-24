@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('priority');
             $table->string('image_path')->nullable();
             $table->foreignId('project_id')->constrained('projects');
-            $table->foreignId('assigned_to')->constrained('users');
+            $table->foreignId('assigned_user_id')->constrained('users');
             $table->foreignId('created_by')->constrained('users');
             $table->foreignId('updated_by')->constrained('users');
             $table->timestamps();
