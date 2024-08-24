@@ -10,7 +10,8 @@ import {
  } from '@/constants';
 
 
-export default function TasksTable({ tasks, queryParams = null }) {
+export default function TasksTable({ tasks, queryParams = null, hideProjectName = false }) {
+    queryParams = queryParams || {};
 
     const searchFieldChanged = (name, value) => {
         if (value) {
@@ -59,6 +60,7 @@ export default function TasksTable({ tasks, queryParams = null }) {
                                 ID
                             </TableHeading>
                             <th className="px-3 py-3">IMage</th>
+                            {!hideProjectName && <th className="px-3 py-3">Project Name</th>}
                             <TableHeading
                                 name="name"
                                 sort_field={queryParams.sort_field}
@@ -99,6 +101,7 @@ export default function TasksTable({ tasks, queryParams = null }) {
                         <tr className="text-nowrap">
                             <th className="px-3 py-3"></th>
                             <th className="px-3 py-3"></th>
+                            {!hideProjectName && <th className="px-3 py-3"></th>}
                             <th className="px-3 py-3">
                                 <TextInput
                                     className="w-full"
@@ -142,6 +145,7 @@ export default function TasksTable({ tasks, queryParams = null }) {
                                         className="w-10 h-10 rounded-full"
                                     />
                                 </td>
+                                { !hideProjectName && <td className="px-3 py-2">{task.project.name}</td>}
                                 <td className="px-3 py-2">{task.name}</td>
                                 <td className="px-3 py-2">
                                     <span

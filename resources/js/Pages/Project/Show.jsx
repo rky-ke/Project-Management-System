@@ -4,9 +4,10 @@ import {
  } from '@/constants';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
+import TasksTable from '../Task/TasksTable';
 
 
-export default function Show({auth, project}) {
+export default function Show({auth, project, tasks, queryParams = null, hideProjectName = false}) {
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -85,11 +86,12 @@ export default function Show({auth, project}) {
                     </div>
                 </div>
             </div>
-            <div className="py-12">
+            <div className="pb-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             <div className="overflow-auto">
+                                <TasksTable tasks={tasks} queryParams={queryParams} hideProjectName = {!hideProjectName} />
                             </div>
                         </div>
                         {/*  Pagination */}
