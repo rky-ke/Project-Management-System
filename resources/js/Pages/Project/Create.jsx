@@ -157,13 +157,13 @@ export default function Create({ auth }) {
                             <div className="mt-4 text-right">
                                 <Link 
                                     href={route('project.index')}
-                                    className="bg-gray-100 py-1 px-3 text-gray-800 rounded shadow transition-all duration-300 hover:bg-gray-200 mr-2"
+                                    className="bg-gray-100 py-1 px-3 text-gray-800 rounded shadow transition-all duration-300 hover:bg-gray-00 mr-2"
                                 >
                                     Cancel
                                 </Link>
                                 <button
                                     type="submit"
-                                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                     onClick={handleSubmit}
                                 >
                                     Submit
