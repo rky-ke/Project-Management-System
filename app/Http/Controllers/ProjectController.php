@@ -40,6 +40,7 @@ class ProjectController extends Controller
     }
     public function create()
     {
+        $quetry = Project::query();
         return inertia('Project/Create');
     }
 
