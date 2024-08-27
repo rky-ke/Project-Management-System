@@ -26,7 +26,7 @@ export default function Create({ auth }) {
     
       function handleSubmit(e) {
         e.preventDefault()
-        post(route('projects.create'));
+        post(route('project.store'));
       };
     return (
         <AuthenticatedLayout
@@ -55,8 +55,7 @@ export default function Create({ auth }) {
                                     type="file"
                                     name="image"
                                     className="mt-1 block w-full"
-                                    value={data.image}
-                                    onChange={(e) => setData('image', e.target.value)}
+                                    onChange={(e) => setData('image', e.target.files[0])}
                                 />
 
                                 <InputError
@@ -163,7 +162,7 @@ export default function Create({ auth }) {
                                 </Link>
                                 <button
                                     type="submit"
-                                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                    className="bg-emerald-500 py-1 px-3 text-white rounded shadow transition-all hover:bg-emerald-600"
                                     onClick={handleSubmit}
                                 >
                                     Submit
